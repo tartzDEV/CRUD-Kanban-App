@@ -134,8 +134,14 @@ namespace KanbanApp
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show($"Taak \"{taskName}\" is verplaatst naar {newStatus}.");
-
-                    if (newStatus == "Bezig")
+                    
+                    if (newStatus == "Open")
+                    {
+                        openTasks.Add(taskName);
+                        inProgressTasks.Remove(taskName);
+                        completedTasks.Remove(taskName);
+                    }
+                    else if (newStatus == "Bezig")
                     {
                         openTasks.Remove(taskName);
                         inProgressTasks.Add(taskName);
@@ -230,7 +236,7 @@ namespace KanbanApp
             string selectedTask = CompletedTasksListBox.SelectedItem as string;
             if (!string.IsNullOrEmpty(selectedTask))
             {
-                MoveTask(selectedTask, "Bezig");
+                MoveTask(selectedTask, "Open");
             }
         }
 
