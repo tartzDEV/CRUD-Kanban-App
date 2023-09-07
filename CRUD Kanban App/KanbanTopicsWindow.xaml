@@ -1,0 +1,39 @@
+﻿<Window x:Class="KanbanApp.KanbanTopicsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kanban Taken" Height="400" Width="800">
+    <Grid Background="#333">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ListBox voor Open taken -->
+
+        <ListBox Name="OpenTasksListBox" Width="200" Height="300" Margin="10" Grid.Column="0" SelectionChanged="OpenTasksListBox_SelectionChanged">
+            <!-- Voeg hier de Open taken toe -->
+        </ListBox>
+
+        <!-- ListBox voor Bezig taken -->
+        <ListBox Name="InProgressTasksListBox" Width="200" Height="300" Margin="10" Grid.Column="1" SelectionChanged="InProgressTasksListBox_SelectionChanged">
+            <!-- Voeg hier de Bezig taken toe -->
+        </ListBox>
+
+        <!-- ListBox voor Afgerond taken -->
+        <ListBox Name="CompletedTasksListBox" Width="200" Height="300" Margin="10" Grid.Column="2" SelectionChanged="CompletedTasksListBox_SelectionChanged">
+            <!-- Voeg hier de Afgerond taken toe -->
+        </ListBox>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="Voeg Taak Toe" Click="AddTask_Click" Margin="0 0 10 0" Background="#444" Foreground="White" />
+            <Button Content="Verwijder Taak" Click="RemoveTask_Click" Margin="0 0 10 0" Background="#444" Foreground="White" />
+        </StackPanel>
+
+        <!-- Knop om het venster te sluiten -->
+        <Button Content="Sluiten" Click="CloseButton_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Background="#444" Foreground="White" />
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,15,0,0" TextWrapping="Wrap" Text="Bezig" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,15,0,0" TextWrapping="Wrap" Text="Open" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0,15,0,0" TextWrapping="Wrap" Text="Afgerond" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+    </Grid>
+</Window>

@@ -1,0 +1,13 @@
+﻿<Window x:Class="KanbanApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kanban App" Height="400" Width="600">
+    <Grid Background="#333">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Voer de naam van het project in:" Foreground="White" />
+            <TextBox Name="ProjectNameTextBox" Width="200" Margin="10" Background="#444" Foreground="White" />
+            <Button Content="Laden Kanban-bord" Click="LoadKanbanBoard_Click" Background="#444" Foreground="White" />
+            <Button Content="Maak Board" Click="CreateKanbanBoard_Click" Background="#444" Foreground="White" />
+        </StackPanel>
+    </Grid>
+</Window>
